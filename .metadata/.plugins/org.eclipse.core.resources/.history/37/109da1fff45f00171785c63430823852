@@ -1,0 +1,9 @@
+package ck.com.Printers;
+
+public class Printer {
+
+	public Printer(IncBox incBox, IPaper paper) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

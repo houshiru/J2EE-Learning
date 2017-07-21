@@ -1,0 +1,5 @@
+package ck.com.interfaces;
+
+public interface I01 {
+
+}

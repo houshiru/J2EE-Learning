@@ -1,0 +1,5 @@
+package ck.com.interfaces;
+
+public class phone implements I01, I02 {
+
+}
