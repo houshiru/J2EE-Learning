@@ -1,5 +1,0 @@
-package ck.com.Printers;
-
-public interface ColorIncbox extends IncBox {
-
-}

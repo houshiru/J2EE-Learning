@@ -1,9 +1,0 @@
-package ck.com.Printers;
-
-public class Printer {
-
-	public Printer() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

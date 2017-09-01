@@ -1,0 +1,68 @@
+package shoppingcar;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Shoppingcar {
+	private double totalPrice;//购物车所有商品的总价格
+	private int totalCount;//购物车所有的商品数量
+	private Map<Integer, OrderItemBean> itemMap = new HashMap<Integer, OrderItemBean>();
+	
+	private Database database;
+	public Shoppingcar() {
+		// 初始化购物车
+		database = new Database();
+	} 
+	public void buy(int nid) {
+		//如果该商品是第一次购买，商品的信息从数据库获取。itemMap增加一对
+		//键值对。如果不是第一次购买，则通过商品编号找到对应的订单项，然后更新
+		//订单项的商品数量。不管是否第一次购买，都得更新购物车的总价格和总数量。
+		if (itemMap.containsKey(nid)) {
+			OrderItemBean itemBean = itemMap.get(nid);
+			itemBean.setCount(itemBean.getCount()+1);
+		}else {
+			OrderItemBean itemBean = new OrderItemBean();
+			itemBean.setMacbean(database.getMacbean(nid));
+			itemBean.setCount(1);
+			itemMap.put(nid, itemBean);
+		}
+	}
+	
+	public void delete(int nid) {
+		//通过商品编号删除对应的订单项，然后从新更新购物车的总价格和总数量。
+		if (itemMap.containsKey(nid)) {
+			itemMap.remove(nid);
+		} else {
+			System.out.println("");
+		}
+	}
+	
+	public void update(int nid, int count) {
+		//通过商品编号找到对应的订单项，修改商品数量。然后次更新购物车的总价格和总数量。
+		if (itemMap.containsKey(nid)) {
+			OrderItemBean itemBean = itemMap.get(nid);
+			itemBean.setCount(count);
+		}else {
+			System.out.println("没有此商品");
+		}
+	}
+	
+	public void clear() {
+		//清空订单项，购物车的总价格和总数量清零。
+	}
+	
+	public double getTotalprice() {
+		double totalPrice = 0;
+		Collection collection = itemMap.values();
+		return totalPrice;
+	}
+	
+	public int totalCount() {
+		return totalCount;
+	}
+	
+	
+	
+	
+}

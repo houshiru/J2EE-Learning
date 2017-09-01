@@ -1,0 +1,28 @@
+package homework;
+
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+public class TestSet {
+
+	public static void main(String[] args) {
+		Set persons =  new HashSet();
+		persons.add(new Person(1, "aa", "male"));
+		persons.add(new Person(2, "bb", "fmale"));
+		persons.add(new Person(5, "cc", "fmale"));
+		persons.add(new Person(1, "aa", "male"));
+		persons.add(new Person(3, "ee", "fmale"));
+		persons.add(new Person(2, "ff", "male"));
+		
+		Iterator iterator = persons.iterator();
+		while (iterator.hasNext()) {
+			Person person = (Person) iterator.next();
+			System.out.println(person.getId()+","+person.getName());
+			
+		}
+		
+
+	}
+
+}

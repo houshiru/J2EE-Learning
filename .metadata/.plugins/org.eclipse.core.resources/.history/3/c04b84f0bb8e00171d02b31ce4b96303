@@ -1,0 +1,14 @@
+package shoppingcar;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Shoppingcar {
+	private double totalPrice;
+	private int totalCount;
+	private Map<Integer, OrderItemBean> itemMap = new HashMap<Integer, OrderItemBean>();
+	
+	public Shoppingcar() {
+		// TODO Auto-generated constructor stub
+	}
+}
